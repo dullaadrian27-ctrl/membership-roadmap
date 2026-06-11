@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Roadmap | CEO Table Resource Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple:       #9895D3;
+  --purple-deep:  #3C3489;
+  --purple-light: #EEEDFE;
+  --purple-mid:   #6B68B8;
+  --gold:         #D09963;
+  --gold-light:   #FAF3E8;
+  --gold-dark:    #A8742D;
+  --white:        #FFFFFF;
+  --off:          #F8F7FF;
+  --charcoal:     #2D2B3D;
+  --gray:         #6B6B8A;
+  --gray-light:   #E8E7F5;
+  --green:        #0F6E56;
+  --green-light:  #E1F5EE;
+  --font-d: 'Playfair Display', Georgia, serif;
+  --font-b: 'DM Sans', sans-serif;
+  --r: 12px;
+  --rs: 8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--off);color:var(--charcoal);line-height:1.65;}
+
+.top-bar{
+  position:sticky;top:0;z-index:200;
+  background:var(--purple-deep);
+  padding:0.7rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 20px rgba(60,52,137,0.35);
+}
+.tb-brand{font-family:var(--font-d);font-style:italic;color:var(--white);font-size:1rem;}
+.tb-brand span{color:var(--gold);}
+.btn-pdf{
+  background:var(--gold);color:var(--purple-deep);border:none;border-radius:var(--rs);
+  padding:0.4rem 0.9rem;font-family:var(--font-b);font-size:0.75rem;font-weight:600;
+  cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:0.35rem;
+}
+.btn-pdf:hover{background:var(--gold-dark);color:var(--white);}
+
+.hero{
+  background:linear-gradient(135deg,var(--purple-deep) 0%,var(--purple-mid) 65%,var(--purple) 100%);
+  padding:3rem 2rem 2.5rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;
+  background:radial-gradient(circle,rgba(208,153,99,0.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-eye{font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.hero h1{font-family:var(--font-d);font-style:italic;font-size:clamp(1.9rem,4vw,2.6rem);color:var(--white);line-height:1.2;margin-bottom:0.6rem;}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:0.9rem;color:rgba(255,255,255,0.72);max-width:500px;margin:0 auto 1.8rem;line-height:1.7;}
+.op-wrap{max-width:420px;margin:0 auto;}
+.op-row{display:flex;justify-content:space-between;font-size:0.72rem;color:rgba(255,255,255,0.6);margin-bottom:0.45rem;}
+.op-row strong{color:var(--gold);}
+.op-track{height:5px;background:rgba(255,255,255,0.15);border-radius:10px;overflow:hidden;}
+.op-fill{height:100%;background:linear-gradient(90deg,var(--gold),#F0C080);border-radius:10px;transition:width 0.5s ease;width:0%;}
+
+.container{max-width:860px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+
+.res-card{
+  background:var(--white);border-radius:var(--r);
+  border:1px solid var(--gray-light);
+  box-shadow:0 2px 12px rgba(60,52,137,0.06);
+  margin-bottom:2rem;overflow:hidden;
+}
+.res-card-header{
+  background:var(--purple-light);
+  padding:1.1rem 1.5rem;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+  border-bottom:1px solid var(--gray-light);
+}
+.rch-eyebrow{font-size:0.63rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:4px;}
+.rch-title{font-family:var(--font-d);font-size:1.2rem;font-weight:600;color:var(--purple-deep);}
+.rch-desc{font-size:0.82rem;color:var(--gray);margin-top:4px;line-height:1.5;}
+.rch-tag{
+  flex-shrink:0;font-size:0.63rem;font-weight:600;
+  padding:3px 10px;border-radius:20px;
+  background:var(--green-light);color:var(--green);
+  letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;
+  margin-top:2px;
+}
+.sec-bar{
+  background:var(--purple-light);padding:0.55rem 1.5rem;
+  font-size:0.65rem;font-weight:600;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--purple-deep);
+  border-top:1px solid var(--gray-light);
+}
+.res-body{padding:1.5rem;}
+.quote{
+  background:var(--purple-deep);border-radius:var(--rs);
+  padding:1.1rem 1.4rem;margin-bottom:1.25rem;
+}
+.quote p{font-family:var(--font-d);font-style:italic;color:var(--white);font-size:0.95rem;line-height:1.6;}
+.quote-attr{margin-top:0.5rem;font-size:0.68rem;color:var(--gold);font-weight:600;letter-spacing:0.05em;}
+.field-group{margin-bottom:1.1rem;}
+.field-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:0.4rem;display:block;}
+.field-input{
+  width:100%;border:1.5px solid var(--gray-light);border-radius:var(--rs);
+  padding:0.6rem 0.85rem;font-family:var(--font-b);font-size:0.85rem;
+  color:var(--charcoal);background:var(--off);outline:none;transition:all 0.2s;
+}
+.field-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(152,149,211,0.15);background:var(--white);}
+.field-input::placeholder{color:#B0AECF;}
+textarea.field-input{resize:vertical;min-height:52px;}
+.roadmap-row{
+  display:flex;align-items:stretch;gap:0;margin-bottom:6px;border-radius:var(--rs);overflow:hidden;
+}
+.rm-phase{
+  min-width:90px;flex-shrink:0;padding:0.65rem 0.9rem;
+  font-size:0.72rem;font-weight:700;color:var(--white);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  line-height:1.3;
+}
+.rm-content{
+  flex:1;padding:0.65rem 1rem;
+  background:var(--purple-light);
+  font-size:0.82rem;color:var(--charcoal);line-height:1.5;
+}
+.rm-content strong{color:var(--purple-deep);font-weight:600;}
+
+.toast{
+  position:fixed;bottom:1.5rem;right:1.5rem;
+  background:var(--green);color:var(--white);
+  font-size:0.78rem;font-weight:600;padding:0.6rem 1.2rem;
+  border-radius:20px;opacity:0;transform:translateY(8px);
+  transition:all 0.3s;pointer-events:none;z-index:999;
+}
+.toast.show{opacity:1;transform:translateY(0);}
+
+footer{
+  background:var(--purple-deep);text-align:center;
+  padding:1.25rem;font-size:0.7rem;color:rgba(255,255,255,0.45);
+  letter-spacing:0.05em;
+}
+footer a{color:var(--gold);text-decoration:none;}
+
+@media print{
+  .top-bar,.btn-pdf,.toast,footer{display:none!important;}
+  .hero{background:var(--purple-deep)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+@media(max-width:580px){
+  .container{padding:1.5rem 1rem 3rem;}
+  .rm-phase{min-width:72px;}
+  .top-bar{padding:0.6rem 1rem;}
+  .btn-pdf span{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="tb-brand">Consulting with <span>AJR</span></div>
+  <button class="btn-pdf" onclick="window.print()">⬇ <span>Save PDF</span></button>
+</header>
+
+<div class="hero">
+  <div class="hero-eye">CEO Table Membership · Resource Library</div>
+  <h1>Your <em>90-Day</em><br>Membership Roadmap.</h1>
+  <p class="hero-sub">Where you are going, what drops each month, and the transformation at every stage.</p>
+  <div class="op-wrap">
+    <div class="op-row"><span>Resource 03 of 05</span><strong>Membership Roadmap</strong></div>
+    <div class="op-track"><div class="op-fill" style="width:60%"></div></div>
+  </div>
+</div>
+
+<main class="container">
+  <div class="res-card">
+    <div class="res-card-header">
+      <div class="rch-left">
+        <div class="rch-eyebrow">Resource 03 · Start Here</div>
+        <div class="rch-title">Your 90-Day Membership Roadmap</div>
+        <div class="rch-desc">Where you are going, what drops each month, and the transformation at every stage.</div>
+      </div>
+      <div class="rch-tag">Launch Day</div>
+    </div>
+
+    <div class="res-body">
+      <div class="quote">
+        <p>"I built this roadmap so you never wonder 'what happens next?' Every month has a theme. Every week has a purpose. You just have to show up."</p>
+        <div class="quote-attr">— Aliya Johnson-Roberts</div>
+      </div>
+
+      <div class="sec-bar" style="margin:0 -1.5rem 1.25rem;padding-left:1.5rem;">Month 1 — June 15 · Welcome Home. Know Where You Are.</div>
+
+      <div class="roadmap-row">
+        <div class="rm-phase" style="background:var(--purple-deep);">Week 1<br>Jun 15–21</div>
+        <div class="rm-content"><strong>Launch Week.</strong> Community opens. Welcome video live. CEO Self-Audit drops. Introduce yourself in the feed. 7-Day Enrollment Audit Challenge begins. Resource: CEO Self-Audit Workbook.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--purple-mid);">Week 2<br>Jun 22–28</div>
+        <div class="rm-content"><strong>First Live Webinar.</strong> Topic: Know Your Numbers Before You Build Anything — The CEO Dashboard. Live session + Q&A. Replay posted within 24 hours. Resource: CEO Weekly Dashboard Template.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--gold-dark);">Week 3<br>Jun 29–Jul 5</div>
+        <div class="rm-content"><strong>First Hot Seat.</strong> 3–4 founding members coached live. 15 minutes each. Submit your question in the Hot Seat Room before June 29th. Replay posted within 24 hours.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--green);">Week 4<br>Jul 6–14</div>
+        <div class="rm-content"><strong>Challenge + Close.</strong> 7-Day Enrollment Audit Challenge closes. CEO of the Month announced. Resource: Enrollment Pipeline Checklist. Month 1 closing post from Aliya.</div>
+      </div>
+
+      <div class="field-group" style="margin-top:1.25rem;">
+        <label class="field-label">My Month 1 intention — the one thing I'm building this month</label>
+        <textarea class="field-input" placeholder="Be specific about what you will have built or improved by July 14th." data-key="rm-m1"></textarea>
+      </div>
+
+      <div class="sec-bar" style="margin:1.5rem -1.5rem 1.25rem;padding-left:1.5rem;">Month 2 — July 15 · Build Your Team. Know Your Money.</div>
+
+      <div class="roadmap-row">
+        <div class="rm-phase" style="background:var(--purple-deep);">Week 5<br>Jul 15–21</div>
+        <div class="rm-content"><strong>Month 2 Opens + July 18th Live Event.</strong> VIP founding members attend the Full Circle CEO Experience in Philadelphia. Resource: Staff Onboarding SOP Template. Community energy is HIGH this week.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--purple-mid);">Week 6<br>Jul 22–28</div>
+        <div class="rm-content"><strong>Second Live Webinar.</strong> Topic: Build a Team That Doesn't Need You in the Room. Staffing, onboarding, retention, internal leaders. Resource: Staff Evaluation Form.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--gold-dark);">Week 7<br>Jul 29–Aug 4</div>
+        <div class="rm-content"><strong>Second Hot Seat + Book Club Launch.</strong> Book Club announced for founding members + Inner Circle clients only. First book revealed. First discussion date set.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--green);">Week 8<br>Aug 5–14</div>
+        <div class="rm-content"><strong>Challenge + Close.</strong> 7-Day Team Audit Challenge. CEO of the Month announced. Resource: Finance Tracker / Cash Flow Template drops.</div>
+      </div>
+
+      <div class="field-group" style="margin-top:1.25rem;">
+        <label class="field-label">My Month 2 intention</label>
+        <textarea class="field-input" placeholder="What will you have built or changed about your team or financial clarity by August 14th?" data-key="rm-m2"></textarea>
+      </div>
+
+      <div class="sec-bar" style="margin:1.5rem -1.5rem 1.25rem;padding-left:1.5rem;">Month 3 — August 15 · Step Into the CEO Seat.</div>
+
+      <div class="roadmap-row">
+        <div class="rm-phase" style="background:var(--purple-deep);">Week 9<br>Aug 15–21</div>
+        <div class="rm-content"><strong>Third Live Webinar.</strong> Topic: The CEO Transition — How to Stop Running Your Center and Start Leading It. 60 minutes. Resource: Visionary CEO Transition Roadmap.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--purple-mid);">Week 10<br>Aug 22–28</div>
+        <div class="rm-content"><strong>Third Hot Seat.</strong> 75 minutes — bigger, deeper, more vulnerable. Focus: CEO identity + decision-making. Second Book Club discussion this month.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--gold-dark);">Week 11<br>Aug 29–Sep 7</div>
+        <div class="rm-content"><strong>Live 90-Day Planning Workshop.</strong> Founding members only. Aliya walks you through building your Q4 plan live — she fills hers in alongside you. Resource: 90-Day Planning Template.</div>
+      </div>
+      <div class="roadmap-row" style="margin-top:5px;">
+        <div class="rm-phase" style="background:var(--green);">Week 12<br>Sep 8–14</div>
+        <div class="rm-content"><strong>Celebration + What's Next.</strong> 90-day wins shared. Aliya celebrates every founding member by name. Q4 preview revealed. Personal DM from Aliya to every founding member. Resource: Q4 CEO Growth Plan Template.</div>
+      </div>
+
+      <div class="field-group" style="margin-top:1.25rem;">
+        <label class="field-label">My Month 3 intention — who I am becoming as a CEO</label>
+        <textarea class="field-input" placeholder="By September 14th, what will have changed about how you show up as a CEO — not just in your business, but in how you think?" data-key="rm-m3"></textarea>
+      </div>
+
+      <div class="field-group" style="margin-top:0.5rem;">
+        <label class="field-label">My 90-day revenue / enrollment goal for this membership period</label>
+        <input class="field-input" type="text" placeholder="e.g. Fill 8 open spots, collect 100% of tuition monthly, reduce staff turnover by 1 person" data-key="rm-goal">
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Childcare CEO Table Membership &nbsp;·&nbsp; <a href="https://consultingwithajr.com">consultingwithajr.com</a> &nbsp;·&nbsp; © 2026 AJR Consulting. All rights reserved.
+</footer>
+
+<div class="toast" id="toast">✓ &nbsp;Progress saved</div>
+
+<script>
+const STORE_KEY = 'ajr-roadmap';
+
+let saveTimer;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    const state = {};
+    document.querySelectorAll('[data-key]').forEach(el=>{ state[el.dataset.key]=el.value; });
+    localStorage.setItem(STORE_KEY, JSON.stringify(state));
+    showToast();
+  }, 500);
+}
+
+function load(){
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    if(!raw) return;
+    const s = JSON.parse(raw);
+    Object.entries(s).forEach(([k,v])=>{
+      const el = document.querySelector(`[data-key="${k}"]`);
+      if(el) el.value=v;
+    });
+  }catch(e){}
+}
+
+function showToast(){
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2000);
+}
+
+document.querySelectorAll('input[type=text],textarea').forEach(el=>el.addEventListener('input', save));
+load();
+</script>
+</body>
+</html>
